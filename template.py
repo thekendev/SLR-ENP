@@ -16,7 +16,7 @@ import logging
 # logging string
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
-project_name = 'SLR-ENP'
+project_name = 'SLR_ENP'
 list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
