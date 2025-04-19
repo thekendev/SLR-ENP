@@ -1,0 +1,22 @@
+COLUMNS:
+  "Year": int64
+  "Quarter": object
+  "Electricity: Very Small (Pence per kWh)": float64
+  "Electricity: Small (Pence per kWh)": float64
+  "Electricity: Small/Medium (Pence per kWh)": float64
+  "Electricity: Medium (Pence per kWh)": float64
+  "Electricity: Large (Pence per kWh)": float64
+  "Electricity: Very Large (Pence per kWh)": float64
+  "Electricity: Extra Large (Pence per kWh)": float64
+  "Electricity: Average (Pence per kWh)": float64
+  "Gas: Very Small (Pence per kWh)": float64
+  "Gas: Small (Pence per kWh)": float64
+  "Gas: Medium (Pence per kWh)": float64
+  "Gas: Large (Pence per kWh)": float64
+  "Gas: Very Large (Pence per kWh)": float64
+  "Gas: Average (Pence per kWh)": float64
+
+
+
+TARGET_COLUMN:
+  name: "Electricity: Average (Pence per kWh)"
