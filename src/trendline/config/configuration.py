@@ -1,7 +1,8 @@
 from src.trendline.constants import *
 from src.trendline.utils.common import read_yaml, create_directories
 from src.trendline.entity import (DataIngestionConfig,
-                                DataValidationConfig)
+                                DataValidationConfig,
+                                DataTransformationConfig)
 
 
 
@@ -52,3 +53,17 @@ class ConfigurationManager:
         
         
         return data_validation_config
+    
+    
+    # data_transformation_configuration_manager
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([config['root_dir']])
+        
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config['root_dir']),       # ✅ convert to Path
+            data_path=Path(config['data_path'])      # ✅ convert to Path
+        )
+        return data_transformation_config
+    

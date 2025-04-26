@@ -23,3 +23,8 @@ class DataValidationConfig:
     all_schema: dict
     
     
+# data_transformation_entity
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path
