@@ -1,3 +1,5 @@
+# Ignore huggingface 
+Deployment-slr-enp-HF/
 # Ignore everything in the artifacts folder
 /artifacts/*
 
