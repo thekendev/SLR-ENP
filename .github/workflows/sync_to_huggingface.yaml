@@ -1,4 +1,3 @@
-# sync to hugging face spaces
 name: Sync to Hugging Face hub
 on:
   push:
