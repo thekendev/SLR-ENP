@@ -2,7 +2,7 @@ from src.trendline.logging import logger
 from src.trendline.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from src.trendline.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from src.trendline.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
-
+from src.trendline.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
 
 
 STAGE_NAME = "Data Ingestion Stage"
@@ -42,4 +42,16 @@ if __name__ == "__main__":
         logger.exception(e)
         raise e
     
+    
+    
+# Model Trainer
+    STAGE_NAME = "Model Trainer Stage"
+    try:
+        logger.info(f">>>>>>>>>>> Stage: {STAGE_NAME} has started <<<<<<<<<<<")
+        data_ingestion = ModelTrainerTrainingPipeline()
+        data_ingestion.main()
+        logger.info(f">>>>>>>>>>> Stage: {STAGE_NAME} has been completed <<<<<<<<<<<<<\n\nx=====================x")
+    except Exception as e:
+        logger.exception(e)
+        raise e
     
