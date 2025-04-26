@@ -1,4 +1,4 @@
-# sync test 6
+# sync test 7
 name: Sync to Hugging Face hub
 on:
   push:
