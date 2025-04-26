@@ -9,3 +9,9 @@ openpyxl
 
 # model training
 scikit-learn
+
+# dataingestion
+PyYAML
+joblib
+ensure
+python-box

@@ -1,3 +1,8 @@
+# Ignore everything in the artifacts folder
+/artifacts/*
+
+# But don't ignore model_trainer folder
+!/artifacts/model_trainer/
 # Ignore everything inside the data folder
 data/*
 # But do NOT ignore this specific file
