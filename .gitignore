@@ -1,3 +1,8 @@
+# Ignore everything inside the data folder
+data/*
+# But do NOT ignore this specific file
+!research/data/temple_raw.xlsx
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
