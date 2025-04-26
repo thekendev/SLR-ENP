@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF main
+        run: git push --force https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF main
