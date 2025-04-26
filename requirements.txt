@@ -16,6 +16,6 @@ joblib
 ensure
 python-box
 
-# deployment - UI
+# Deployment
 streamlit
 requests
