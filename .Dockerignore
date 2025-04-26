@@ -1,0 +1,6 @@
+# Ignore all .xlsx files (i.e., training data)
+*.xlsx
+
+# Ignore everything in the artifacts folder except model_trainer
+artifacts/*
+!artifacts/model_trainer
