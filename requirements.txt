@@ -15,3 +15,7 @@ PyYAML
 joblib
 ensure
 python-box
+
+# deployment
+streamlit
+requests
