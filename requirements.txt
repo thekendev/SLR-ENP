@@ -6,3 +6,6 @@ matplotlib
 # EDA.ipynb
 ipykernel
 openpyxl
+
+# model training
+scikit-learn
