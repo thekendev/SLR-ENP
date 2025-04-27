@@ -1,4 +1,4 @@
-name: Sync to Hugging Face hub
+name: Sync to Hugging Face Hub
 on:
   push:
     branches: [main]
@@ -17,41 +17,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-
-      - name: Check for changes in specific files
-        id: changes
-        run: |
-          git diff --exit-code --quiet requirements.txt || echo "requirements.txt changed" >> changed_files.txt
-          git diff --exit-code --quiet artifacts/model_trainer || echo "artifacts/model_trainer changed" >> changed_files.txt
-          git diff --exit-code --quiet app.py || echo "app.py changed" >> changed_files.txt
-          git diff --exit-code --quiet Dockerfile || echo "Dockerfile changed" >> changed_files.txt
-
-      - name: Exit if no relevant changes detected
-        run: |
-          if [ ! -s changed_files.txt ]; then
-            echo "No relevant changes detected. Exiting."
-            exit 0
-          fi
-
-      - name: Create a new directory for the model
-        run: |
-          mkdir temp_artifacts
-          cp -r artifacts/model_trainer temp_artifacts/
-
-      - name: Commit and push only relevant files to Hugging Face
+      - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          cd temp_artifacts
-          git init
-          git remote add origin https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF main
-          
-          # Add only the specific files to be pushed
-          git add requirements.txt artifacts/model_trainer/** app.py Dockerfile
-          git commit -m "Update model or related files"
-          
-          # Push to Hugging Face force
-          git push --force origin main
-
-      - name: Clean up
-        run: rm -rf temp_artifacts
+        run: git push https://HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/HF_USERNAME/SPACE_NAME main
