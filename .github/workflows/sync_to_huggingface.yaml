@@ -44,7 +44,7 @@ jobs:
         run: |
           cd temp_artifacts
           git init
-          git remote add origin https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF
+          git remote add origin https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF main
           
           # Add only the specific files to be pushed
           git add requirements.txt artifacts/model_trainer/** app.py Dockerfile
