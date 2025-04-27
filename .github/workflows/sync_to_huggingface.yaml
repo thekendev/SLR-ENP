@@ -1,12 +1,7 @@
 name: Sync to Hugging Face Hub
 on:
   push:
-    branches: [main]
-    paths:
-      - 'requirements.txt'
-      - 'artifacts/model_trainer/**'
-      - 'app.py'
-      - 'Dockerfile'
+    branches: [Deployment-CICD-HF]  # Change to the new branch
   workflow_dispatch:
 
 jobs:
@@ -20,4 +15,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF main
+        run: git push https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF Deployment-CICD-HF  # Push the new branch
