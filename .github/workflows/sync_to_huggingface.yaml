@@ -1,5 +1,3 @@
-# sync HF only to right files/folders
-
 name: Sync to Hugging Face hub
 on:
   push:
@@ -40,15 +38,19 @@ jobs:
           mkdir temp_artifacts
           cp -r artifacts/model_trainer temp_artifacts/
 
-      - name: Commit and push the model to Hugging Face
+      - name: Commit and push only relevant files to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           cd temp_artifacts
           git init
           git remote add origin https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF
-          git add .
+          
+          # Add only the specific files to be pushed
+          git add requirements.txt artifacts/model_trainer/** app.py Dockerfile
           git commit -m "Update model or related files"
+          
+          # Push to Hugging Face
           git push --force origin main
 
       - name: Clean up
