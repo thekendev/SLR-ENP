@@ -1,4 +1,4 @@
-# sync hF to right files/folders
+# sync HF only to right files/folders
 
 name: Sync to Hugging Face hub
 on:
