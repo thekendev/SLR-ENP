@@ -1,4 +1,4 @@
-  # Ignore unnecessary folders
+# Ignore unnecessary folders
 config/
 research/
 src/
