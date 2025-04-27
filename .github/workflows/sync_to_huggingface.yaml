@@ -50,7 +50,7 @@ jobs:
           git add requirements.txt artifacts/model_trainer/** app.py Dockerfile
           git commit -m "Update model or related files"
           
-          # Push to Hugging Face
+          # Push to Hugging Face force
           git push --force origin main
 
       - name: Clean up
