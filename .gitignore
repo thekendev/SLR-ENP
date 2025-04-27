@@ -1,10 +1,22 @@
-# Ignore huggingface 
-Deployment-slr-enp-HF/
+  # Ignore unnecessary folders
+config/
+research/
+src/
+
+# Ignore specific files
+.DS_Store
+LICENSE
+main.py
+params.yaml
+schema.yaml
+setup.py
+template.py
 # Ignore everything in the artifacts folder
 /artifacts/*
 
 # But don't ignore model_trainer folder
-#!/artifacts/model_trainer/
+/artifacts/model_trainer/
+
 
 
 # Ignore everything inside the data folder
