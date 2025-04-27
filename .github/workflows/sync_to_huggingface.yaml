@@ -1,8 +1,8 @@
+
 name: Sync to Hugging Face Hub
 on:
   push:
-    branches: [Deployment-CICD-HF]  # Change to the new branch
-  workflow_dispatch:
+    branches: [Deployment-CI/CD-HF]   # <-- Now listens to your deployment branch
 
 jobs:
   sync-to-hub:
@@ -12,7 +12,9 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to hub
+      - name: Push to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF Deployment-CICD-HF  # Push the new branch
+        run: |
+          git remote add space https://kanayojustice:$HF_TOKEN@huggingface.co/spaces/kanayojustice/Deployment-slr-enp-HF
+          git push --force space Deployment-CI/CD-HF:main
